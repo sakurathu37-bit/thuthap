@@ -5,72 +5,95 @@
 <title>Travel Form</title>
 
 <style>
+*{
+  box-sizing: border-box;
+}
+
 body{
   margin:0;
   font-family: Arial, sans-serif;
   background: transparent;
 }
 
-/* Container gọn như widget */
+/* Container */
 .container{
-  max-width:320px;
+  width:100%;
+  max-width:300px;
   margin:20px auto;
   padding:15px;
   border-radius:16px;
-  background:  transparent;
+  background: rgba(255,255,255,0.2);
   backdrop-filter: blur(10px);
 }
 
 /* Title */
 h2{
   text-align:center;
-  margin-bottom:10px;
+  margin-bottom:12px;
   color:#222;
 }
 
-/* Input group có icon */
+/* Input group */
 .input-group{
-  position:relative;
-  margin:10px 0;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:12px 0;
+  padding:12px;
+  border-radius:12px;
+  background: #ffffff; /* 👈 box có màu */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition:0.2s;
 }
 
+/* Hover + focus */
+.input-group:hover{
+  transform: translateY(-1px);
+}
+
+.input-group:focus-within{
+  box-shadow: 0 0 0 2px #8B0000;
+}
+
+/* Icon */
 .input-group span{
-  position:absolute;
-  left:10px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:14px;
+  font-size:15px;
 }
 
-/* Input + select */
-input, select{
-  width:85%;
-  margin:0 auto;
-  display:block;
-  padding:10px 10px 10px 35px;
-  border-radius:10px;
-  border:1px solid rgba(0,0,0,0.1);
-  background: rgba(255,255,255,0.6);
+/* Input + Select */
+.input-group input,
+.input-group select{
+  flex:1;
+  border:none;
+  outline:none;
+  background:transparent;
+  font-size:14px;
 }
 
 /* Button */
 button{
   width:100%;
-  padding:10px;
+  padding:12px;
   border:none;
-  border-radius:10px;
+  border-radius:12px;
   background:#8B0000;
   color:white;
   font-weight:bold;
   cursor:pointer;
-  margin-top:10px;
+  margin-top:12px;
+  transition:0.2s;
+}
+
+button:hover{
+  background:#a30000;
 }
 
 /* Message */
 #msg{
   text-align:center;
-  margin-top:8px;
+  margin-top:10px;
   color:#333;
+  font-size:14px;
 }
 </style>
 </head>
