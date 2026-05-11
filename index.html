@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Travel Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Travel Form — Share Tech Font</title>
+
+<!-- Google Fonts: Share Tech -->
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -11,17 +15,16 @@
 
 body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family: 'Share Tech', 'Arial', sans-serif;
   background: transparent;
 }
 
-/* Container */
+/* Container — thu nhẹ kích thước tổng thể */
 .container{
-    margin-bottom:-100px;
   width:100%;
-  max-width:300px;
+  max-width:280px;  /* giảm từ 300px xuống 280px => ô nhỏ hơn */
   margin:18px auto;
-  padding:15px;
+  padding:12px;      /* giảm padding từ 15px xuống 12px */
   border-radius:16px;
   background: transparent;
   backdrop-filter: blur(10px);
@@ -33,19 +36,21 @@ h2{
   text-align:center;
   margin-bottom:-9px;
   color:#222;
+  font-family: 'Share Tech', monospace;
+  letter-spacing: 0.5px;
+  font-size: 1.3rem; /* hơi nhỏ lại chút */
 }
 
-/* Input group */
+/* Input group — thu nhỏ padding và gap */
 .input-group{
-    margin-bottom:-13px;
   display:flex;
   align-items:center;
-  gap:10px;
-  margin:10px 0;
-  padding:12px;
+  gap:8px;           /* giảm từ 10px xuống 8px */
+  margin:8px 0;      /* giảm từ 10px xuống 8px */
+  padding:8px 10px;  /* giảm từ 12px xuống 8px 10px */
   border-radius:12px;
-  background: #ffffff; /* 👈 box có màu */
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition:0.2s;
 }
 
@@ -58,25 +63,28 @@ h2{
   box-shadow: 0 0 0 2px #8B0000;
 }
 
-/* Icon */
+/* Icon — thu nhỏ chút */
 .input-group span{
-  font-size:15px;
+  font-size:14px;    /* giảm từ 15px xuống 14px */
+  font-family: 'Share Tech', sans-serif;
 }
 
-/* Input + Select */
+/* Input + Select — font nhỏ hơn xíu */
 .input-group input,
 .input-group select{
   flex:1;
   border:none;
   outline:none;
   background:transparent;
-  font-size:14px;
+  font-size:13px;     /* giảm từ 14px xuống 13px */
+  font-family: 'Share Tech', sans-serif;
+  font-weight: normal;
 }
 
-/* Button */
+/* Button — thu nhỏ padding */
 button{
   width:100%;
-  padding:12px;
+  padding:10px;       /* giảm từ 12px xuống 10px */
   border:none;
   border-radius:12px;
   background:#8B0000;
@@ -85,7 +93,10 @@ button{
   cursor:pointer;
   margin-top:0px;
   transition:0.2s;
- margin-bottom:-5px;
+  margin-bottom:-5px;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 14px;    /* giảm từ 15px xuống 14px */
+  letter-spacing: 0.3px;
 }
 
 button:hover{
@@ -95,9 +106,17 @@ button:hover{
 /* Message */
 #msg{
   text-align:center;
-  margin-top:10px;
+  margin-top:8px;      /* giảm từ 10px xuống 8px */
   color:#333;
-  font-size:14px;
+  font-size:12px;      /* giảm từ 14px xuống 12px */
+  font-family: 'Share Tech', sans-serif;
+}
+
+/* Placeholder */
+.input-group input::placeholder,
+.input-group select:invalid {
+  font-family: 'Share Tech', sans-serif;
+  font-size:12px;
 }
 </style>
 </head>
@@ -152,6 +171,8 @@ function submitForm(){
     })
   }).then(()=>{
     show("Request sent ✈️");
+  }).catch(()=>{
+    show("Network error, try again");
   });
 }
 
