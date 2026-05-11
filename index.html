@@ -19,12 +19,12 @@ body{
   background: transparent;
 }
 
-/* Container — thu nhẹ kích thước tổng thể */
+/* Container — giảm bottom margin và padding dưới */
 .container{
   width:100%;
-  max-width:280px;  /* giảm từ 300px xuống 280px => ô nhỏ hơn */
-  margin:18px auto;
-  padding:12px;      /* giảm padding từ 15px xuống 12px */
+  max-width:280px;
+  margin:18px auto 8px auto;  /* giảm bottom margin từ 18px xuống 8px */
+  padding:12px 12px 8px 12px; /* giảm padding bottom từ 12px xuống 8px */
   border-radius:16px;
   background: transparent;
   backdrop-filter: blur(10px);
@@ -38,23 +38,22 @@ h2{
   color:#222;
   font-family: 'Share Tech', monospace;
   letter-spacing: 0.5px;
-  font-size: 1.3rem; /* hơi nhỏ lại chút */
+  font-size: 1.3rem;
 }
 
-/* Input group — thu nhỏ padding và gap */
+/* Input group */
 .input-group{
   display:flex;
   align-items:center;
-  gap:8px;           /* giảm từ 10px xuống 8px */
-  margin:8px 0;      /* giảm từ 10px xuống 8px */
-  padding:8px 10px;  /* giảm từ 12px xuống 8px 10px */
+  gap:8px;
+  margin:8px 0;      /* giữ nguyên */
+  padding:8px 10px;
   border-radius:12px;
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition:0.2s;
 }
 
-/* Hover + focus */
 .input-group:hover{
   transform: translateY(-1px);
 }
@@ -63,39 +62,37 @@ h2{
   box-shadow: 0 0 0 2px #8B0000;
 }
 
-/* Icon — thu nhỏ chút */
 .input-group span{
-  font-size:14px;    /* giảm từ 15px xuống 14px */
+  font-size:14px;
   font-family: 'Share Tech', sans-serif;
 }
 
-/* Input + Select — font nhỏ hơn xíu */
 .input-group input,
 .input-group select{
   flex:1;
   border:none;
   outline:none;
   background:transparent;
-  font-size:13px;     /* giảm từ 14px xuống 13px */
+  font-size:13px;
   font-family: 'Share Tech', sans-serif;
   font-weight: normal;
 }
 
-/* Button — thu nhỏ padding */
+/* Button — giảm margin bottom và padding */
 button{
   width:100%;
-  padding:10px;       /* giảm từ 12px xuống 10px */
+  padding:10px;
   border:none;
   border-radius:12px;
   background:#8B0000;
   color:white;
   font-weight:bold;
   cursor:pointer;
-  margin-top:0px;
+  margin-top:4px;      /* giảm từ 0 xuống 4px để hơi cách nhẹ */
+  margin-bottom:0;     /* không có margin bottom */
   transition:0.2s;
-  margin-bottom:-5px;
   font-family: 'Share Tech', sans-serif;
-  font-size: 14px;    /* giảm từ 15px xuống 14px */
+  font-size: 14px;
   letter-spacing: 0.3px;
 }
 
@@ -103,12 +100,13 @@ button:hover{
   background:#a30000;
 }
 
-/* Message */
+/* Message — giảm margin top và bottom */
 #msg{
   text-align:center;
-  margin-top:8px;      /* giảm từ 10px xuống 8px */
+  margin-top:6px;      /* giảm từ 8px xuống 6px */
+  margin-bottom:0;     /* không có margin bottom */
   color:#333;
-  font-size:12px;      /* giảm từ 14px xuống 12px */
+  font-size:12px;
   font-family: 'Share Tech', sans-serif;
 }
 
@@ -117,6 +115,14 @@ button:hover{
 .input-group select:invalid {
   font-family: 'Share Tech', sans-serif;
   font-size:12px;
+}
+
+/* Loại bỏ khoảng trống thừa cuối cùng */
+.container:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
 }
 </style>
 </head>
