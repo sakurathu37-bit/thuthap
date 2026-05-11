@@ -88,8 +88,8 @@ button{
   color:white;
   font-weight:bold;
   cursor:pointer;
-  margin-top:4px;      /* giảm từ 0 xuống 4px để hơi cách nhẹ */
-  margin-bottom:0;     /* không có margin bottom */
+  margin-top:-1px;      /* giảm từ 0 xuống 4px để hơi cách nhẹ */
+  margin-bottom:-30px;     /* không có margin bottom */
   transition:0.2s;
   font-family: 'Share Tech', sans-serif;
   font-size: 14px;
@@ -103,8 +103,8 @@ button:hover{
 /* Message — giảm margin top và bottom */
 #msg{
   text-align:center;
-  margin-top:6px;      /* giảm từ 8px xuống 6px */
-  margin-bottom:0;     /* không có margin bottom */
+  margin-top:-6px;      /* giảm từ 8px xuống 6px */
+  margin-bottom:-12;     /* không có margin bottom */
   color:#333;
   font-size:12px;
   font-family: 'Share Tech', sans-serif;
@@ -117,11 +117,11 @@ button:hover{
   font-size:12px;
 }
 
-/* Loại bỏ khoảng trống thừa cuối cùng */
+
 .container:after {
   content: "";
   display: block;
-  height: 0;
+  height: -12;
   clear: both;
 }
 </style>
